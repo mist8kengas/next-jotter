@@ -1,0 +1,116 @@
+.mainContainer {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.main div.jotDescription h1.title {
+    margin: 0.2em 0;
+}
+.main div.jotDescription {
+    max-width: 70vw;
+}
+
+.main div.jotArea {
+    background-color: var(--color-jotArea-bg);
+    color: var(--color-jotArea-txt);
+
+    margin: 1em 0;
+
+    border: 0.3em solid transparent;
+    border-radius: 0.6em;
+
+    transition: border 0.1s ease-in-out;
+}
+.main div.jotArea:focus-within {
+    border: 0.3em solid var(--color-jotArea-focused);
+}
+.main div.jotArea:focus-within textarea {
+    color: var(--color-jotArea-txt-active);
+}
+.main div.jotArea textarea::placeholder {
+    color: var(--color-jotArea-placeholder);
+}
+.main div.jotArea textarea {
+    background-color: transparent;
+    color: inherit;
+
+    padding: 0.3em;
+
+    min-width: 50vw;
+    min-height: 20vw;
+    width: 500px;
+    height: 300px;
+    max-width: 70vw;
+    max-height: 70vh;
+
+    font-family: var(--font-mono);
+
+    border: 0.6em solid transparent;
+
+    outline: none;
+
+    transition: color 0.1s ease-in-out;
+}
+
+.main .uploadContainer {
+    display: flex;
+    justify-content: right;
+}
+.main .uploadContainer .uploadButton {
+    background-color: var(--color-jotArea-txt-active);
+    color: var(--color-txt);
+
+    padding: 0.6em 0.8em;
+
+    font-weight: 700;
+
+    border: none;
+    border-radius: 0.6em;
+
+    text-transform: uppercase;
+
+    transition: 0.2s ease-in-out;
+}
+.main .uploadContainer .uploadButton:enabled:hover {
+    background-color: var(--color-jotArea-txt);
+
+    cursor: pointer;
+}
+.main .uploadContainer .uploadButton:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+}
+
+.main .uploadContainer .uploadedJotUrlContainer {
+    margin: 0 0.3em;
+}
+.main .uploadContainer .uploadedJotUrlContainer button {
+    background-color: var(--color-jotArea-txt-active);
+    color: var(--color-txt);
+
+    padding: 0.6em 0.8em;
+
+    font-weight: 700;
+
+    border: none;
+    border-radius: 0.6em;
+
+    text-transform: uppercase;
+
+    transition: 0.2s ease-in-out;
+}
+.main .uploadContainer .uploadedJotUrlContainer button:enabled:hover {
+    background-color: var(--color-jotArea-txt);
+
+    cursor: pointer;
+}
+.main .uploadContainer .uploadedJotUrlContainer button:disabled {
+    opacity: 0;
+
+    cursor: default;
+    pointer-events: none;
+}

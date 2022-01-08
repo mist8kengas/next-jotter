@@ -1,0 +1,28 @@
+body {
+    background-color: var(--color-bg);
+    color: var(--color-txt);
+
+    margin: 0;
+
+    font-family: var(--font-sans);
+}
+
+a:link,
+a:visited {
+    color: inherit;
+}
+
+:root {
+    --color-bg: #ffe8d6;
+    --color-txt: #111317;
+    --color-jotArea-bg: #2b303a;
+    --color-jotArea-txt: #829cbc;
+    --color-jotArea-txt-active: #b0c4de;
+    --color-jotArea-focused: #246bce;
+
+    --color-uploadButton-disabled: #9a031e;
+    --color-uploadButton-disabled-txt: #f2bac0;
+
+    --font-sans: 'Roboto', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+}
