@@ -1,6 +1,8 @@
 // import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+
+import defaultStyles from '../../styles/default.module.css';
 import styles from '../../styles/Jot.module.css';
 
 import Head from '../../page_components/Head.js';
@@ -49,19 +51,19 @@ const Main = () => {
 
     if (jotData && jotData != '0')
         return (
-            <div className={styles.mainContainer}>
+            <div className={defaultStyles.mainContainer}>
                 <Head></Head>
 
-                <main className={styles.main}>
-                    <div className={styles.jotDescription}>
-                        <h1 className={styles.title}>A Jot</h1>
-                        <span className={styles.description}>
+                <main className={defaultStyles.main}>
+                    <div className={defaultStyles.description}>
+                        <h1 className={defaultStyles.title}>A Jot</h1>
+                        <span>
                             Created on{' '}
                             <time>{jotInformation.date} (local timezone)</time>
                         </span>
                     </div>
 
-                    <div className={styles.jotContent}>
+                    <div className={defaultStyles.jotArea}>
                         <textarea ref={jotContent} readOnly={true}></textarea>
                     </div>
 
@@ -82,12 +84,12 @@ const Main = () => {
         );
     else if (jotData == '0')
         return (
-            <div className={styles.mainContainer}>
+            <div className={defaultStyles.mainContainer}>
                 <Head></Head>
 
-                <main className={styles.main}>
-                    <div className={styles.statusDescription}>
-                        <h3 className={styles.title}>Jot not found</h3>
+                <main className={defaultStyles.main}>
+                    <div className={defaultStyles.description}>
+                        <h3 className={defaultStyles.title}>Jot not found</h3>
                     </div>
 
                     <div className={styles.buttonContainerCentered}>
@@ -107,14 +109,14 @@ const Main = () => {
         );
     else
         return (
-            <div className={styles.mainContainer}>
+            <div className={defaultStyles.mainContainer}>
                 <Head></Head>
 
-                <main className={styles.main}>
-                    <div className={styles.statusDescription}>
-                        <h3 className={styles.title}>Loading Jot</h3>
-                        <div className={styles.loadingAnimation}>
-                            <div className={styles.loadAnimBar}></div>
+                <main className={defaultStyles.main}>
+                    <div className={defaultStyles.description}>
+                        <h3 className={defaultStyles.title}>Loading Jot</h3>
+                        <div className={defaultStyles.loadingAnimation}>
+                            <div className={defaultStyles.loadAnimBar}></div>
                         </div>
                     </div>
                 </main>

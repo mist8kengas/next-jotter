@@ -1,109 +1,14 @@
-.mainContainer {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-}
-
-.main div.jotDescription h1.title {
-    margin: 0.2em 0;
-}
-.main div.jotDescription {
-    min-width: 50vw;
-    width: 100%;
-    max-width: 70vw;
-}
-
-.main div.statusDescription h3.title {
-    margin: 0.3em 0;
-    text-align: center;
-}
-
-/* loading animation */
-.main div.statusDescription div.loadingAnimation {
-    display: inline-block;
-    position: relative;
-
-    width: 100%;
-    height: 0.3em;
-
-    border-radius: 0.3em;
-
-    overflow: hidden;
-}
-.main div.statusDescription div.loadingAnimation div.loadAnimBar {
-    display: inline-block;
-    position: absolute;
-
-    top: 0;
-    left: -100%;
-
-    background-color: var(--color-txt);
-
-    width: inherit;
-    height: inherit;
-
-    animation-delay: 1s;
-    animation-duration: 2s;
-    animation-name: loadAnimBar;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-
-    border-radius: inherit;
-    transition: left 0.2s ease-in-out;
-}
-
-.main div.jotContent {
-    background-color: var(--color-jotArea-bg);
-    color: var(--color-jotArea-txt);
-
-    margin: 1em 0;
-
-    border: 0.3em solid transparent;
-    border-radius: 0.6em;
-}
-.main div.jotContent:focus-within {
-    border: 0.3em solid var(--color-jotArea-focused);
-}
-.main div.jotContent:focus-within textarea {
-    color: var(--color-jotArea-txt-active);
-}
-.main div.jotContent textarea::placeholder {
-    color: var(--color-jotArea-placeholder);
-}
-.main div.jotContent textarea {
-    background-color: transparent;
-    color: inherit;
-
-    padding: 0.3em;
-
-    min-width: 50vw;
-    min-height: 20vw;
-    width: 500px;
-    height: 300px;
-    max-width: 70vw;
-    max-height: 70vh;
-
-    font-family: var(--font-mono);
-
-    border: 0.6em solid transparent;
-
-    outline: none;
-
-    transition: color 0.1s ease-in-out;
-}
-
-.main .buttonContainer {
+/* nav button */
+.buttonContainer {
     display: flex;
     justify-content: right;
 }
-.main .buttonContainerCentered {
+.buttonContainerCentered {
     display: flex;
     justify-content: center;
 }
-.main .buttonContainer .navButton button,
-.main .buttonContainerCentered .navButton button {
+.buttonContainer .navButton button,
+.buttonContainerCentered .navButton button {
     background-color: var(--color-jotArea-txt-active);
     color: var(--color-txt);
 
@@ -118,33 +23,15 @@
 
     transition: 0.2s ease-in-out;
 }
-.main .buttonContainer .navButton button:enabled:hover,
-.main .buttonContainerCentered .navButton button:enabled:hover {
+.buttonContainer .navButton button:enabled:hover,
+.buttonContainerCentered .navButton button:enabled:hover {
     background-color: var(--color-jotArea-txt);
 
     cursor: pointer;
 }
-.main .buttonContainer .navButton button:disabled,
-.main .buttonContainerCentered .navButton button:disabled {
+.buttonContainer .navButton button:disabled,
+.buttonContainerCentered .navButton button:disabled {
     opacity: 0.65;
 
     cursor: not-allowed;
-}
-
-@keyframes loadAnimBar {
-    0% {
-        left: -100%;
-    }
-    25% {
-        left: 0%;
-    }
-    50% {
-        left: 100%;
-    }
-    75% {
-        left: 0%;
-    }
-    100% {
-        left: -100%;
-    }
 }

@@ -1,5 +1,7 @@
 // import Head from 'next/head';
 import Link from 'next/link';
+
+import defaultStyles from '../styles/default.module.css';
 import styles from '../styles/Main.module.css';
 
 import Head from '../page_components/Head.js';
@@ -89,15 +91,15 @@ const Main = () => {
             : 'Click to upload'
         : 'Jot must be 3 characters or longer to upload';
     return (
-        <div className={styles.mainContainer}>
+        <div className={defaultStyles.mainContainer}>
             <Head></Head>
 
-            <main className={styles.main}>
-                <div className={styles.jotDescription}>
-                    <h1 className={styles.title}>Start Jotting</h1>
+            <main className={defaultStyles.main}>
+                <div className={defaultStyles.jotDescription}>
+                    <h1 className={defaultStyles.title}>Start Jotting</h1>
                 </div>
 
-                <div className={styles.jotArea}>
+                <div className={defaultStyles.jotArea}>
                     <textarea
                         ref={jotArea}
                         onInput={jotArea.current.oninput}
@@ -120,9 +122,8 @@ const Main = () => {
                             </Link>
                         )}
                     </div>
-                    <div>
+                    <div className={styles.uploadButtonContainer}>
                         <button
-                            className={styles.uploadButton}
                             onClick={uploadJot}
                             title={uploadButtonTitle}
                             disabled={!readyToUpload || uploading}
