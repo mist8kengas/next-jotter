@@ -10,9 +10,12 @@ export default class Mongo {
      * @param {MongoClientOptions} options Client options
      */
     constructor(options = undefined) {
-        const { DB_HOST, DB_NAME, DB_COLLECTION } = process.env;
+        const { DB_HOST, DB_NAME, DB_COLLECTION, DB_USER, DB_PASS } =
+            process.env;
         this.env = { DB_HOST, DB_NAME, DB_COLLECTION };
-        this.client = new MongoClient(DB_HOST, options);
+
+        const mongoConnectionUrl = `mongodb://${DB_USER}:${DB_PASS}@${DB_HOST}`;
+        this.client = new MongoClient(mongoConnectionUrl, options);
     }
 
     /**
